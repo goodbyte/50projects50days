@@ -13,7 +13,7 @@
 
   button.addEventListener('click', () => createNotification());
 
-  function createNotification(message = null, type = null) {
+  function createNotification(message, type) {
     const notif = document.createElement('div');
     notif.classList.add('toast');
     notif.classList.add(type ? type : getRandomType());
@@ -22,9 +22,7 @@
 
     toasts.appendChild(notif);
 
-    setTimeout(() => {
-      notif.remove();
-    }, 3000);
+    setTimeout(notif.remove.bind(notif), 3000);
   }
 
   function getRandomMessage() {

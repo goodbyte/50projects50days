@@ -56,6 +56,11 @@ This is my take on the Udemy course [50 Projects in 50 Days.](https://www.udemy.
 | 50  | [Insect Catch Game](https://github.com/goodbyte/50projects50days/tree/master/50-insect-catch-game) | [Live Demo](https://50projects50days.com/projects/insect-catch-game/) |
 
 
+## Resources
+
+* [Youtube - Build 5 Projects With HTML, CSS & JavaScript](https://www.youtube.com/watch?v=JkeyKeK3V24)
+* [GitHub - Original Repo](https://github.com/bradtraversy/50projects50days)
+
 ## License
 
 The MIT License

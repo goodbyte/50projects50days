@@ -10,10 +10,10 @@
   }
 
   function getRandomSize() {
-    return `${getRandomNr()}x${getRandomNr()}`;
+    return `${getRandomNumber()}x${getRandomNumber()}`;
   }
 
-  function getRandomNr() {
+  function getRandomNumber() {
     return Math.floor(Math.random() * 10) + 300;
   }
 }

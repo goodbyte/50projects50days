@@ -16,18 +16,11 @@
   };
 
   clipboardEl.addEventListener('click', () => {
-    const textarea = document.createElement('textarea');
     const password = resultEl.innerText;
+    if (!password) return;
 
-    if (!password) {
-      return;
-    }
+    navigator.clipboard.writeText(password);
 
-    textarea.value = password;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    textarea.remove();
     alert('Password copied to clipboard!');
   });
 
@@ -50,13 +43,11 @@
   function generatePassword(lower, upper, number, symbol, length) {
     let generatedPassword = '';
     const typesCount = lower + upper + number + symbol;
-    const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(
+    const typesArr = [{lower}, {upper}, {number}, {symbol}].filter(
       (item) => Object.values(item)[0]
     );
 
-    if (typesCount === 0) {
-      return '';
-    }
+    if (typesCount === 0) return '';
 
     for (let i = 0; i < length; i += typesCount) {
       typesArr.forEach((type) => {

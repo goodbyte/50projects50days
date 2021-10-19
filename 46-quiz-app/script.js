@@ -65,36 +65,27 @@
   }
 
   function getSelected() {
-    let answer;
-
-    answerEls.forEach((answerEl) => {
-      if (answerEl.checked) {
-        answer = answerEl.id;
-      }
-    });
-
-    return answer;
+    for (let answer of answerEls) {
+      if (answer.checked) return answer.id;
+    }
   }
 
   submitBtn.addEventListener('click', () => {
     const answer = getSelected();
+  
+    if (!answer) return;
 
-    if (answer) {
-      if (answer === quizData[currentQuiz].correct) {
-        score++;
-      }
+    if (answer === quizData[currentQuiz].correct) score++;
 
-      currentQuiz++;
+    currentQuiz++;
 
-      if (currentQuiz < quizData.length) {
-        loadQuiz();
-      } else {
-        quiz.innerHTML = `
-                <h2>You answered ${score}/${quizData.length} questions correctly</h2>
-
-                <button onclick="location.reload()">Reload</button>
-            `;
-      }
+    if (currentQuiz < quizData.length) {
+      loadQuiz();
+    } else {
+      quiz.innerHTML = `
+        <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+        <button onclick="location.reload()">Reload</button>
+      `;
     }
   });
 }

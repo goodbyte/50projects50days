@@ -5,22 +5,17 @@
 
   const todos = JSON.parse(localStorage.getItem('todos'));
 
-  if (todos) {
-    todos.forEach((todo) => addTodo(todo));
-  }
+  if (todos) todos.forEach((todo) => addTodo(todo));
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-
     addTodo();
   });
 
   function addTodo(todo) {
     let todoText = input.value;
 
-    if (todo) {
-      todoText = todo.text;
-    }
+    if (todo) todoText = todo.text;
 
     if (todoText) {
       const todoEl = document.createElement('li');
@@ -32,25 +27,25 @@
 
       todoEl.addEventListener('click', () => {
         todoEl.classList.toggle('completed');
-        updateLS();
+        updateLocalStorage();
       });
 
       todoEl.addEventListener('contextmenu', (e) => {
         e.preventDefault();
 
         todoEl.remove();
-        updateLS();
+        updateLocalStorage();
       });
 
       todosUL.appendChild(todoEl);
 
       input.value = '';
 
-      updateLS();
+      updateLocalStorage();
     }
   }
 
-  function updateLS() {
+  function updateLocalStorage() {
     todosEl = document.querySelectorAll('li');
 
     const todos = [];

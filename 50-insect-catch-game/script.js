@@ -17,7 +17,7 @@
       const img = btn.querySelector('img');
       const src = img.getAttribute('src');
       const alt = img.getAttribute('alt');
-      selected_insect = { src, alt };
+      selected_insect = {src, alt};
       screens[1].classList.add('up');
       setTimeout(createInsect, 1000);
       startGame();
@@ -40,12 +40,10 @@
   function createInsect() {
     const insect = document.createElement('div');
     insect.classList.add('insect');
-    const { x, y } = getRandomLocation();
+    const {x, y} = getRandomLocation();
     insect.style.top = `${y}px`;
     insect.style.left = `${x}px`;
-    insect.innerHTML = `<img src="${selected_insect.src}" alt="${
-      selected_insect.alt
-    }" style="transform: rotate(${Math.random() * 360}deg)" />`;
+    insect.innerHTML = `<img src="${selected_insect.src}" alt="${selected_insect.alt}" style="transform: rotate(${Math.random() * 360}deg)">`;
 
     insect.addEventListener('click', catchInsect);
 
@@ -57,7 +55,7 @@
     const height = window.innerHeight;
     const x = Math.random() * (width - 200) + 100;
     const y = Math.random() * (height - 200) + 100;
-    return { x, y };
+    return {x, y};
   }
 
   function catchInsect() {
@@ -74,9 +72,8 @@
 
   function increaseScore() {
     score++;
-    if (score > 19) {
-      message.classList.add('visible');
-    }
+    if (score > 19) message.classList.add('visible');
+    
     scoreEl.innerHTML = `Score: ${score}`;
   }
 }

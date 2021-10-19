@@ -10,7 +10,7 @@
   async function getData() {
     const res = await fetch('https://randomuser.me/api?results=50');
 
-    const { results } = await res.json();
+    const {results} = await res.json();
 
     // Clear result
     result.innerHTML = '';
@@ -21,12 +21,12 @@
       listItems.push(li);
 
       li.innerHTML = `
-            <img src="${user.picture.large}" alt="${user.name.first}">
-            <div class="user-info">
-                <h4>${user.name.first} ${user.name.last}</h4>
-                <p>${user.location.city}, ${user.location.country}</p>
-            </div>
-        `;
+        <img src="${user.picture.large}" alt="${user.name.first}">
+        <div class="user-info">
+            <h4>${user.name.first} ${user.name.last}</h4>
+            <p>${user.location.city}, ${user.location.country}</p>
+        </div>
+      `;
 
       result.appendChild(li);
     });

@@ -8,7 +8,6 @@
     square.classList.add('square');
 
     square.addEventListener('mouseover', () => setColor(square));
-
     square.addEventListener('mouseout', () => removeColor(square));
 
     container.appendChild(square);

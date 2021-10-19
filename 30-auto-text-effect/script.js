@@ -2,18 +2,18 @@
   const textEl = document.getElementById('text');
   const speedEl = document.getElementById('speed');
   const text = 'We Love Programming!';
-  let idx = 1;
-  let speed = 300 / speedEl.value;
+  let index = 1;
+  let speed = 67 / speedEl.value;
 
   writeText();
 
   function writeText() {
-    textEl.innerText = text.slice(0, idx);
+    textEl.innerText = text.slice(0, index);
 
-    idx++;
+    index++;
 
-    if (idx > text.length) {
-      idx = 1;
+    if (index > text.length) {
+      index = 1;
     }
 
     setTimeout(writeText, speed);
